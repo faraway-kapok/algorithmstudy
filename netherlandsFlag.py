@@ -2,6 +2,8 @@
 def partition(arr, l, r, p):
     less = l - 1
     more = r + 1
+    
+    #l指向当前指针
     while l < more:
         if arr[l] < p:
             less += 1
