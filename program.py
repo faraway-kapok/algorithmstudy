@@ -4,12 +4,17 @@ IPO
 1.costs, profits. W初始资金 K最多可做K个项目
 思路：
 创建node类型数据，包含cost 以及profit
-1.  按照cost的大小创建小根堆costMinHeap
-2.  根据W初始资金，从cost小根堆中弹出小于等于W的项目，如果costMinHeap为空或者剩下的项目花费都大于W，停止弹出。并按照profit的值创建大根堆profitMaxHeap
-3.1 若profitMaxHeap为空，表明当前W 未解锁任何项目，其次说明已经没有任何项目可以挑选，直接返回W
-3.2 若profitMaxHeap不为空，弹出栈顶项目，即为programbest， 完成项目后将该项目的收益加到W上
-4.  重复步骤2，进行新一轮的解锁
-5.  如果步骤3进行的过程中没有返回，那么做完K个项目后，返回W
+1.按照cost的大小创建小根堆costMinHeap
+2.根据W初始资金，从cost小根堆中弹出小于等于W的项目，
+如果costMinHeap为空或者剩下的项目花费都大于W，停止弹出。
+并按照profit的值创建大根堆profitMaxHeap
+3.1若profitMaxHeap为空，表明当前W 未解锁任何项目，
+其次说明已经没有任何项目可以挑选，直接返回W
+3.2若profitMaxHeap不为空，弹出栈顶项目，
+即为programbest，完成项目后将该项目的收益加到W上
+4.重复步骤2，进行新一轮的解锁
+5.如果步骤3进行的过程中没有返回，
+那么做完K个项目后，返回W
 """
 import heapq
 
