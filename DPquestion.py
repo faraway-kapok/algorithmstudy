@@ -21,8 +21,8 @@ def process(N, from_, to_, help_):
 """
 def printAllSub(arr, i, res):
     if i == len(arr):
-        print(res)
-        return
+        # print(res)
+        return res
     printAllSub(arr, i+1, res)        #要
     printAllSub(arr, i+1, res+arr[i]) #不要
 
@@ -32,8 +32,17 @@ def printAllSub(arr, i, res):
 """
 字符串的全排列
 """
-def printAllPermutations(arr, i):
-    pass
+def Permutation(arr):
+    l = []
+    if len(arr) <= 1:
+        return arr
+    n = len(arr)
+    for i in range(n):
+        for j in Permutation(arr[:i]+arr[i+1:]):
+            temp = arr[i] + str(j)
+            if temp not in l:
+                l.append(temp)
+    return l
 
 # arr = "abc"
 # printAllPermutations(arr, 0)
@@ -111,3 +120,4 @@ def isSum(arr, i, res, aim):
 arr = [1,4,8]
 aim = 11
 print(isSum(arr, 0, 0, aim))
+

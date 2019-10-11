@@ -31,7 +31,7 @@ def getMinSplitCost(arr):
     return ans
 
 import queue
-
+"""尚未跑通"""
 def cut_gold_bar(arr):
     arr_list = []
     prio_queue = queue.PriorityQueue()
@@ -50,4 +50,4 @@ def cut_gold_bar(arr):
 if __name__ == "__main__":
     arr = [3,9,5,2,4,4]
     print(getMinSplitCost(arr))
-    print(cut_gold_bar(arr))
+    # print(cut_gold_bar(arr))

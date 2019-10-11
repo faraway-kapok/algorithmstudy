@@ -1,5 +1,5 @@
 """
-13.复制含有随机指针节点的链表
+13.复制含有随机指针节点的链表,复杂链表的复制
 """
 """
 一种特殊的链表节点描述如下:
@@ -27,7 +27,8 @@ class Node:
         self.val = val
         self.next = nex
         self.rand = rand
-
+        
+#python中的字典相当于java中的hashmap
 def copyListWithRand1(head):
     if head == None:
         return None

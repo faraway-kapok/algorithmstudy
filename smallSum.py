@@ -1,4 +1,6 @@
-"""小和运算，求一个数之前小于它的数字之和"""
+"""
+运用归并
+小和运算，求一个数之前小于它的数字之和"""
 def smallSum(arr):
     if arr == None or len(arr) < 2:
         return 0
@@ -8,7 +10,8 @@ def mergeSort(arr, l, r):
     if l == r:
         return 0
     mid = l + ((r-l)>>1)
-    return mergeSort(arr, l, mid) + mergeSort(arr, mid+1, r) + merge(arr, l, mid, r)
+    return mergeSort(arr, l, mid) + mergeSort(arr, mid+1, r) \
+           + merge(arr, l, mid, r)
 
 def merge(arr, l, mid, r):
     temp = []
@@ -21,6 +24,7 @@ def merge(arr, l, mid, r):
             temp.append(arr[p1])
             p1 += 1
         else:
+            res += 0
             temp.append(arr[p2])
             p2 += 1
     while p1 <= mid:

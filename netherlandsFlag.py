@@ -1,15 +1,15 @@
 """荷兰国旗，<x , x, >x """
-def partition(arr, l, r, p):
+def partition(arr, l, r, num):
     less = l - 1
     more = r + 1
     
     #l指向当前指针
     while l < more:
-        if arr[l] < p:
+        if arr[l] < num:
             less += 1
             swap(arr,less, l)
             l += 1
-        elif arr[l] > p:
+        elif arr[l] > num:
             more -= 1
             # print(more)
             swap(arr, more, l)

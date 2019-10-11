@@ -12,5 +12,23 @@ def splitchar(s):
         if res[i] != "":
             print(res[i], end=" ")
 
-s = input()
-splitchar(s)
+# s = input()
+# splitchar(s)
+
+
+def countarr(arr):
+    arrdic = {}
+    for ele in arr:
+        if ele not in arrdic:
+            arrdic[ele] = 1
+        else:
+            arrdic[ele] += 1
+    return arrdic
+
+s = input().strip()
+arrdic = countarr(s)
+arrdic = sorted(arrdic.items(), key=lambda x:x[0])
+res = ""
+for key, value in arrdic:
+    res += str(key) + str(value)
+print(res)

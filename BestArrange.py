@@ -17,3 +17,16 @@ class program:
     
     def __lt__(self, other):
         return self.end < other.end
+
+def bestArrange(programs, cur):
+    sortedprograms = sorted(programs)
+    result = 0
+    for i in range(len(programs)):
+        if cur <= sortedprograms[i].start:
+            result += 1
+            cur = sortedprograms[i].end
+    
+    return result
+
+if __name__ == "__main__":
+    starts = []
